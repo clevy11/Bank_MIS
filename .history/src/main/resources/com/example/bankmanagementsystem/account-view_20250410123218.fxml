@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.collections.FXCollections?>
+<?import java.lang.String?>
+
+<VBox spacing="10" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.bankmanagementsystem.AccountController">
+    <padding>
+        <Insets top="20" right="20" bottom="20" left="20"/>
+    </padding>
+    
+    <Label text="Bank Account Management" style="-fx-font-size: 24px; -fx-font-weight: bold;"/>
+    
+    <HBox spacing="10">
+        <VBox spacing="5">
+            <Label text="Account Type:"/>
+            <ComboBox fx:id="accountTypeCombo" prefWidth="200">
+                <items>
+                    <FXCollections fx:factory="observableArrayList">
+                        <String fx:value="Savings"/>
+                        <String fx:value="Current"/>
+                        <String fx:value="Fixed Deposit"/>
+                    </FXCollections>
+                </items>
+            </ComboBox>
+        </VBox>
+        
+        <VBox spacing="5">
+            <Label text="Initial Balance:"/>
+            <TextField fx:id="initialBalanceField" prefWidth="200"/>
+        </VBox>
+        
+        <Button text="Create Account" onAction="#createAccount" style="-fx-background-color: #2e4bdb; -fx-text-fill: white;"/>
+    </HBox>
+    
+    <Separator/>
+    
+    <HBox spacing="10">
+        <VBox spacing="5">
+            <Label text="Amount:"/>
+            <TextField fx:id="amountField" prefWidth="200"/>
+        </VBox>
+        
+        <Button text="Deposit" onAction="#deposit" style="-fx-background-color: #2e4bdb; -fx-text-fill: white;"/>
+        <Button text="Withdraw" onAction="#withdraw" style="-fx-background-color: #2e4bdb; -fx-text-fill: white;"/>
+    </HBox>
+    
+    <Separator/>
+    
+    <VBox spacing="5">
+        <Label text="Account Information:" style="-fx-font-weight: bold;"/>
+        <TextArea fx:id="accountInfoArea" prefHeight="100" editable="false"/>
+    </VBox>
+    
+    <VBox spacing="5">
+        <Label text="Transaction History:" style="-fx-font-weight: bold;"/>
+        <TextArea fx:id="transactionArea" prefHeight="150" editable="false"/>
+    </VBox>
+</VBox> 

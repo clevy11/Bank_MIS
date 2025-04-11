@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="476.0" prefWidth="628.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Button graphicTextGap="6.0" layoutX="430.0" layoutY="410.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="183.0" style="-fx-background-color: #2e4bdb;" text="Create An Account" textFill="WHITE">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Button>
+      <ImageView fitHeight="193.0" fitWidth="215.0" layoutX="-1.0" layoutY="-2.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fitHeight="410.0" fitWidth="615.0" layoutX="7.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../images/امور-بانکی-2-1.png" />
+         </image>
+      </ImageView>
+      <Button graphicTextGap="6.0" layoutX="38.0" layoutY="410.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="183.0" style="-fx-background-color: #2e4bdb;" text="My Account" textFill="WHITE">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Button>
+   </children>
+</AnchorPane>

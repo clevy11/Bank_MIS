@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" spacing="10.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.bankmanagementsystem.controllers.AccountController">
+   <padding>
+      <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+   </padding>
+   <children>
+      <HBox alignment="CENTER_LEFT" spacing="10.0">
+         <children>
+            <Label text="Account Type:">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <ComboBox fx:id="accountTypeCombo" prefWidth="150.0" />
+            <Button fx:id="createAccountButton" mnemonicParsing="false" onAction="#handleCreateAccount" text="Create Account" />
+         </children>
+      </HBox>
+      
+      <HBox alignment="CENTER_LEFT" spacing="10.0">
+         <children>
+            <Label text="Amount:">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <TextField fx:id="amountField" prefWidth="150.0" />
+            <Button fx:id="depositButton" mnemonicParsing="false" onAction="#handleDeposit" text="Deposit" />
+            <Button fx:id="withdrawButton" mnemonicParsing="false" onAction="#handleWithdraw" text="Withdraw" />
+         </children>
+      </HBox>
+      
+      <TableView fx:id="transactionTable" prefHeight="200.0" prefWidth="780.0">
+         <columns>
+            <TableColumn fx:id="dateColumn" prefWidth="150.0" text="Date" />
+            <TableColumn fx:id="typeColumn" prefWidth="100.0" text="Type" />
+            <TableColumn fx:id="amountColumn" prefWidth="100.0" text="Amount" />
+            <TableColumn fx:id="descriptionColumn" prefWidth="430.0" text="Description" />
+         </columns>
+      </TableView>
+      
+      <Label fx:id="balanceLabel" text="Balance: $0.00">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Label>
+   </children>
+</VBox> 
