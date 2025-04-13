@@ -16,14 +16,10 @@ public class HelloController {
     @FXML
     protected void onWelcomeButtonClick() {
         try {
-            // Load the account view
+
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("account-view.fxml"));
             Parent root = fxmlLoader.load();
-            
-            // Get the current stage
             Stage stage = (Stage) welcomeButton.getScene().getWindow();
-            
-            // Create new scene and set it
             Scene scene = new Scene(root, 800, 600);
             stage.setTitle("Bank Account Management System");
             stage.setScene(scene);

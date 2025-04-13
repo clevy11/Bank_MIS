@@ -20,10 +20,7 @@ public class FixedDepositAccount extends AbstractAccount {
     @Override
     public void deposit(double amount) {
         // Fixed deposit accounts don't allow additional deposits
-        showAlert("Deposit Not Allowed", 
-            "Additional deposits are not permitted in Fixed Deposit accounts.\n" +
-            "Only initial deposit is allowed.\n" +
-            "Your initial deposit was: $" + initialDeposit);
+        throw new UnsupportedOperationException("Additional deposits are not allowed in Fixed Deposit accounts");
     }
 
     @Override
@@ -44,7 +41,7 @@ public class FixedDepositAccount extends AbstractAccount {
     @Override
     public boolean isWithdrawalAllowed(double amount) {
         if (!isMatured) {
-            return false;
+            return false; // No withdrawals allowed before maturity
         }
         return amount > 0 && amount <= balance;
     }

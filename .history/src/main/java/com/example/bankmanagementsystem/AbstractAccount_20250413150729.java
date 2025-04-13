@@ -1,7 +1,6 @@
 package com.example.bankmanagementsystem;
 
 import java.util.LinkedList;
-import javafx.scene.control.Alert;
 
 public abstract class AbstractAccount implements BankAccount {
     protected String accountNumber;
@@ -62,16 +61,7 @@ public abstract class AbstractAccount implements BankAccount {
         return balance;
     }
 
-    @Override
-    public void showAlert(String title, String content) {
-        Alert alert = new Alert(Alert.AlertType.INFORMATION);
-        alert.setTitle(title);
-        alert.setHeaderText(null);
-        alert.setContentText(content);
-        alert.showAndWait();
-    }
-
-
+    // Abstract methods to be implemented by specific account types
     @Override
     public abstract boolean withdraw(double amount);
     @Override

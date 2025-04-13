@@ -2,7 +2,7 @@ package com.example.bankmanagementsystem;
 
 public class SavingsAccount extends AbstractAccount {
     private static final double MINIMUM_BALANCE = 100.0;
-    private static final double INTEREST_RATE = 0.02; 
+    private static final double INTEREST_RATE = 0.02; // 2% annual interest
 
     public SavingsAccount(String accountNumber, double initialBalance) {
         super(accountNumber, initialBalance, "Savings");
@@ -20,12 +20,11 @@ public class SavingsAccount extends AbstractAccount {
 
     @Override
     public double calculateInterest() {
-        return balance * INTEREST_RATE / 12; 
+        return balance * INTEREST_RATE / 12; // Monthly interest
     }
 
     @Override
     public boolean isWithdrawalAllowed(double amount) {
-        
         return amount > 0 && (balance - amount) >= MINIMUM_BALANCE;
     }
 

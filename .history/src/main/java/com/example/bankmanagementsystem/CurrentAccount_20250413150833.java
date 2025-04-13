@@ -19,7 +19,7 @@ public class CurrentAccount extends AbstractAccount {
 
     @Override
     public double calculateInterest() {
-        return 0;
+        return 0; // Current accounts don't earn interest
     }
 
     @Override

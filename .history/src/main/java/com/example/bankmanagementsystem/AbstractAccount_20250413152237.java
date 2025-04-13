@@ -71,7 +71,7 @@ public abstract class AbstractAccount implements BankAccount {
         alert.showAndWait();
     }
 
-
+    // Abstract methods to be implemented by specific account types
     @Override
     public abstract boolean withdraw(double amount);
     @Override

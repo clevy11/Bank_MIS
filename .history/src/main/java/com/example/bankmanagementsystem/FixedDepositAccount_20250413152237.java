@@ -44,7 +44,7 @@ public class FixedDepositAccount extends AbstractAccount {
     @Override
     public boolean isWithdrawalAllowed(double amount) {
         if (!isMatured) {
-            return false;
+            return false; // No withdrawals allowed before maturity
         }
         return amount > 0 && amount <= balance;
     }

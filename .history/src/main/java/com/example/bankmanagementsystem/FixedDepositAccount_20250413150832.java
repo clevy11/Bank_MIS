@@ -7,23 +7,12 @@ public class FixedDepositAccount extends AbstractAccount {
     private LocalDate maturityDate;
     private boolean isMatured;
     private final int termMonths;
-    private final double initialDeposit;
 
     public FixedDepositAccount(String accountNumber, double initialBalance, int months) {
         super(accountNumber, initialBalance, "Fixed Deposit");
         this.termMonths = months;
         this.maturityDate = LocalDate.now().plusMonths(months);
         this.isMatured = false;
-        this.initialDeposit = initialBalance;
-    }
-
-    @Override
-    public void deposit(double amount) {
-        // Fixed deposit accounts don't allow additional deposits
-        showAlert("Deposit Not Allowed", 
-            "Additional deposits are not permitted in Fixed Deposit accounts.\n" +
-            "Only initial deposit is allowed.\n" +
-            "Your initial deposit was: $" + initialDeposit);
     }
 
     @Override
@@ -38,15 +27,12 @@ public class FixedDepositAccount extends AbstractAccount {
 
     @Override
     public double calculateInterest() {
-        return initialDeposit * INTEREST_RATE * termMonths / 12;
+        return balance * INTEREST_RATE * termMonths / 12;
     }
 
     @Override
     public boolean isWithdrawalAllowed(double amount) {
-        if (!isMatured) {
-            return false;
-        }
-        return amount > 0 && amount <= balance;
+        return isMatured && amount > 0 && amount <= balance;
     }
 
     @Override
@@ -73,9 +59,5 @@ public class FixedDepositAccount extends AbstractAccount {
 
     public int getTermMonths() {
         return termMonths;
-    }
-
-    public double getInitialDeposit() {
-        return initialDeposit;
     }
 } 
